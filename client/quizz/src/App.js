@@ -1,9 +1,9 @@
 // import logo from './logo.svg';
 // import './App.css';
 // import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
-import Home from './components/Home';
-import Quiz from './components/Quiz';
-import QuizCreator from './components/QuizCreator';
+import Home from "./components/Home";
+import Quiz from "./components/Quiz";
+import QuizCreator from "./components/QuizCreator";
 
 // function App() {
 //   return (
@@ -32,7 +32,7 @@ import QuizCreator from './components/QuizCreator';
 
 //     //   {/* <BrowseRouter>
 //     //   <Routes>
-      
+
 //     //     <Route exact path="/" component={Home} />
 //     //     <Route exact path="/quiz/:id" component={Quiz} />
 //     //     <Route exact path="/quiz-creator" component={QuizCreator} />
@@ -40,9 +40,6 @@ import QuizCreator from './components/QuizCreator';
 //     // </BrowseRouter> */}
 //     // {/* <Home/> */}
 //     // {/* <QuizCreator/> */}
-    
-    
-
 
 //     // </div>
 
@@ -52,19 +49,29 @@ import QuizCreator from './components/QuizCreator';
 // export default App;
 
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, BrowserRouter, Routes } from "react-router-dom";
-// import HomePage from "./HomePage";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  BrowserRouter,
+  Routes,
+} from "react-router-dom";
+import Navbar from "./components/Navbar";
 // import QuizPage from "./QuizPage";
+import "./index.css";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Home/>} />
-        <Route exact path='/createQuizz' element={<QuizCreator/>}/>
-        <Route exact path="/quiz/:quizId" element={<Quiz/>} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/createQuiz" element={<QuizCreator />} />
+          <Route exact path="/quiz/:quizId" element={<Quiz />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
